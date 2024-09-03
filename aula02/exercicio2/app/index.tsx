@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, Linking, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Image, TouchableOpacity, Linking, StyleSheet, ScrollView, Pressable } from "react-native";
+import { Link } from 'expo-router';
 
 const App = () => {
   const handlePress = () => {
@@ -39,6 +40,12 @@ const App = () => {
         <TouchableOpacity style={styles.buttonJJK} onPress={Press}>
           <Text style={styles.buttonTextJJK}>Clique aqui</Text>
         </TouchableOpacity>
+
+        <Link href="/index2" asChild>
+          <Pressable>
+            <Text>Home</Text>
+          </Pressable>
+        </Link>
 
       </View>
     </ScrollView>
@@ -101,6 +108,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     marginHorizontal: 20,
+  },
+  buttonLink: {
+    backgroundColor: 'blue',
   },
 });
 
